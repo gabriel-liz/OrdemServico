@@ -42,9 +42,9 @@ public class OrdemServicoController {
 	
 	@GetMapping("/{ordemServicoId}")
 	public ResponseEntity<OrdemServico> buscar(@PathVariable Long ordemServicoId){
-		return ordemServicoRepository.findById(ordemServicoId)
+		return ordemServicoRepository.findAllById(ordemServicoId)
 				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+				.orElse(ResponseEntity.notFound().build())
 	}
 
 }

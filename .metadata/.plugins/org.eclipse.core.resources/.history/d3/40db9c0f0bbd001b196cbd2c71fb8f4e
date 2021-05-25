@@ -46,8 +46,6 @@ public class OrdemServico {
 	@ManyToOne
 	private Responsavel responsavel;
 	
-	@Valid
-	@NotNull
 	@Embedded
 	private Equipamento equipamento;
 	

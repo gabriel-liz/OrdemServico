@@ -44,7 +44,7 @@ public class OrdemServicoController {
 	public ResponseEntity<OrdemServico> buscar(@PathVariable Long ordemServicoId){
 		return ordemServicoRepository.findById(ordemServicoId)
 				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+				.orElse(ResponseEntity.notFound().build())
 	}
 
 }
