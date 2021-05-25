@@ -1,0 +1,5 @@
+package com.ordemServico.domain.exception;
+
+public class NegocioException {
+
+}

@@ -1,0 +1,17 @@
+package com.ordemServico.domain.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
+public class Equipamento {
+	
+	private Long id;
+	
+	private String Tipo;
+	private String Marca;
+	private String DescricaoProblema;
+	
+}

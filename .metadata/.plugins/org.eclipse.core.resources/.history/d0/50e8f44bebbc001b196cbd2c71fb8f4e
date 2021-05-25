@@ -1,0 +1,19 @@
+package com.ordemServico.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.model.Cliente;
+import com.ordemServico.domain.repository.ClienteRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class ClienteService {
+
+	private ClienteRepository clienteRepository;
+	
+	public Cliente salver(Cliente cliente) {
+		return clienteRepository.save(cliente);
+	}
+}

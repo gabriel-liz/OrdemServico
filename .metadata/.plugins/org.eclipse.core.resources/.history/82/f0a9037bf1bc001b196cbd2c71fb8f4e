@@ -1,0 +1,11 @@
+package com.ordemServico.domain.model;
+
+public class Equipamento {
+	
+	private Long id;
+	
+	private String Tipo;
+	private String Marca;
+	private String DescricaoProblema;
+	
+}

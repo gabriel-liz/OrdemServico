@@ -1,0 +1,19 @@
+package com.ordemServico.domain.model;
+
+import javax.persistence.Embeddable;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Embeddable
+public class Equipamento {
+	
+	private Long id;
+	
+	private String Tipo;
+	private String Marca;
+	private String DescricaoProblema;
+	
+}

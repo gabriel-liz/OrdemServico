@@ -1,0 +1,26 @@
+package com.ordemServico.domain.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.model.Cliente;
+import com.ordemServico.domain.repository.ClienteRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class ClienteService {
+
+	private ClienteRepository clienteRepository;
+	
+	@Transactional
+	public Cliente salver(Cliente cliente) {
+		return clienteRepository.save(cliente);
+	}
+	
+	public void excluir(Long clienteId) {
+		clienteRepository.deleteById(clienteId);
+	}
+}

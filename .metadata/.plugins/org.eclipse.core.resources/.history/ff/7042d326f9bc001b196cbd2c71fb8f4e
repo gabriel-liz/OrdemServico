@@ -1,0 +1,19 @@
+create table ordemServico(
+
+	id bigint not null auto_increment,
+	cliente_id bigint not null,
+	responsavel_id bigint not null,
+    descricao_solucao varchar(500),
+    data_inicio datetime not null,
+    data_fim datetime,	
+    
+    equipamento_tipo varchar(60) not null,
+    equipamento_marca varchar(60) not null,
+    equipamento_descricaoProblema varchar(300) not null,
+
+	primary key (id)
+);
+
+alter table ordemServico add constraint fk_ordemServico_cliente foreign key(cliente_id) references cliente(id);
+
+alter table ordemServico add constraint fk_ordemServico_responsavel foreign key(responsavel_id) references responsavel(id);

@@ -1,0 +1,9 @@
+package com.ordemServico.domain.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ordemServico.domain.model.Cliente;
+
+public interface ClienteRepository extends JpaRepository<Cliente, Long>{
+
+}

@@ -1,0 +1,14 @@
+package com.ordemServico.domain.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class Cliente {
+	
+	private Long id;
+	private Long nome;
+	private String endereco;
+	private String email;
+}

@@ -1,0 +1,5 @@
+package com.ordemServico.domain.repository;
+
+public interface OrdemServicoRepository {
+
+}

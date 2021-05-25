@@ -1,0 +1,18 @@
+package com.ordemServico.domain.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class OrdemServico {
+	
+	private Long id;
+	
+	private Cliente cliente;
+	
+	private Responsavel responsavel;
+	
+	private Equipamento equipamento;
+
+}

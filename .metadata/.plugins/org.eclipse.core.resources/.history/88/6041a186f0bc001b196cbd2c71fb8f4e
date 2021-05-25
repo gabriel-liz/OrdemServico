@@ -1,0 +1,23 @@
+package com.ordemServico.domain.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.model.Cliente;
+import com.ordemServico.domain.repository.ClienteRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class ResponsavelService {
+
+	private ResponsavelRepository responsavelRepository;
+	
+	
+	@Transactional
+	public Responsavel salvar(Responsavel responsavel) {
+		return responsavelRepository.save(responsavel);
+	}
+}
