@@ -1,6 +1,6 @@
 package com.ordemServico.domain.service;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 import javax.transaction.Transactional;
 
@@ -29,12 +29,12 @@ public class OrdemServicoService {
 		
 		Cliente cliente = clienteService.buscar(ordemServico.getCliente().getId());
 		
-		Responsavel responsavel = responsavelService.buscar(ordemServico.getCliente().getId());
+		Responsavel responsavel = responsavelService.buscar(ordemServico.getResponsavel().getId());
 		
 		ordemServico.setResponsavel(responsavel);
 		ordemServico.setCliente(cliente);
 		ordemServico.setStatus(StatusOrdem.PENDENTE);
-		ordemServico.setData_inicio(LocalDateTime.now());
+		ordemServico.setData_inicio(OffsetDateTime.now());
 		
 		return ordemServicoRepository.save(ordemServico);
 	}		

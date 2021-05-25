@@ -1,0 +1,5 @@
+package com.ordemServico.common;
+
+public class ModelMapperConfig {
+
+}

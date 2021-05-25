@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ordemServico.api.assembler.OrdemServicoAssembler;
+import com.ordemServico.api.model.OrdemServicoModel;
 import com.ordemServico.domain.model.OrdemServico;
 import com.ordemServico.domain.repository.OrdemServicoRepository;
 import com.ordemServico.domain.service.OrdemServicoService;
@@ -28,23 +30,25 @@ public class OrdemServicoController {
 	
 	private OrdemServicoRepository ordemServicoRepository;
 	private OrdemServicoService ordemServicoService;
+	private OrdemServicoAssembler ordemServicoAssembler;
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public OrdemServico criar(@Valid @RequestBody OrdemServico ordemServico) {
-		return ordemServicoService.criar(ordemServico);
+	public OrdemServicoModel criar(@Valid @RequestBody OrdemServico ordemServico) {
+		OrdemServico ordemServicoSolicitada = ordemServicoService.criar(ordemServico);
+		return ordemServicoAssembler.toModel(ordemServicoSolicitada);
 	}
 	
 	@GetMapping
-	public List<OrdemServico> listar(){
-		return ordemServicoRepository.findAll();
+	public List<OrdemServicoModel> listar(){
+		return ordemServicoAssembler.toCollectionModel(ordemServicoRepository.findAll());
 	}
 	
 	@GetMapping("/{ordemServicoId}")
-	public ResponseEntity<OrdemServico> buscar(@PathVariable Long ordemServicoId){
+	public ResponseEntity<OrdemServicoModel> buscar(@PathVariable Long ordemServicoId){
 		return ordemServicoRepository.findById(ordemServicoId)
-				.map(ResponseEntity::ok)
-				.orElse(ResponseEntity.notFound().build());
+				.map(ordemServico -> ResponseEntity.ok(ordemServicoAssembler.toModel(ordemServico)))
+				.orElse(ResponseEntity.notFound().build());				
 	}
 
 }
