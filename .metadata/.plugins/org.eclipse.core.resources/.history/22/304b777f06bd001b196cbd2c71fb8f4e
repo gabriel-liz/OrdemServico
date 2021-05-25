@@ -38,7 +38,6 @@ public class OrdemServico {
 	@Embedded
 	private Equipamento equipamento;
 	
-	@JsonProperty(access = Access.READ_ONLY)
 	@Enumerated(EnumType.STRING)
 	private StatusOrdem status;
 	

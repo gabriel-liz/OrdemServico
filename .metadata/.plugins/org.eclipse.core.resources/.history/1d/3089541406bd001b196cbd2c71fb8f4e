@@ -31,11 +31,11 @@ public class OrdemServicoService {
 		
 		Responsavel responsavel = responsavelService.buscar(ordemServico.getCliente().getId());
 		
-		ordemServico.setResponsavel(responsavel);
 		ordemServico.setCliente(cliente);
 		ordemServico.setStatus(StatusOrdem.PENDENTE);
 		ordemServico.setData_inicio(LocalDateTime.now());
 		
 		return ordemServicoRepository.save(ordemServico);
-	}		
+	}	
+	
 }
