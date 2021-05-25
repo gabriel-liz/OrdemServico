@@ -21,7 +21,6 @@ import com.ordemServico.api.model.input.OrdemServicoInput;
 import com.ordemServico.domain.model.OrdemServico;
 import com.ordemServico.domain.repository.OrdemServicoRepository;
 import com.ordemServico.domain.service.FinalizacaoOrdemServicoService;
-import com.ordemServico.domain.service.InicializacaoOrdemServicoService;
 import com.ordemServico.domain.service.OrdemServicoService;
 
 import lombok.AllArgsConstructor;
@@ -35,7 +34,6 @@ public class OrdemServicoController {
 	private OrdemServicoRepository ordemServicoRepository;
 	private OrdemServicoService ordemServicoService;
 	private FinalizacaoOrdemServicoService finalizacaoEntFinalizacaoOrdemServicoService;
-	private InicializacaoOrdemServicoService inicializacaoOrdemServicoService;
 	private OrdemServicoAssembler ordemServicoAssembler;
 	
 	
@@ -53,12 +51,6 @@ public class OrdemServicoController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void finalizar(@PathVariable Long ordemServicoId) {
 		finalizacaoEntFinalizacaoOrdemServicoService.finalizar(ordemServicoId);
-	}
-	
-	@PutMapping("/{ordemServicoId}/inicializacao")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void iniciar(@PathVariable Long ordemServicoId) {
-		inicializacaoOrdemServicoService.iniciar(ordemServicoId);
 	}
 	
 	

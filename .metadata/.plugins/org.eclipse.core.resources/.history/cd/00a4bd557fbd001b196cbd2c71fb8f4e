@@ -82,20 +82,4 @@ public class OrdemServico {
 	public boolean naoPodeSerFinalizada() {
 		return !podeSerFinalizada();
 	}
-
-	public void iniciar() {
-		
-		if(naoPodeSerIniciada()) {
-			throw new NegocioException("Ordem de Serviço não pode ser iniciada");
-		}
-		setStatus(StatusOrdem.EM_ANDAMENTO);
-		setData_fim(OffsetDateTime.now());			
-	}
-	
-	public boolean podeSerIniciada() {
-		return StatusOrdem.PENDENTE.equals(getStatus());
-	}
-	public boolean naoPodeSerIniciada() {
-		return !podeSerIniciada();
-	}
 }

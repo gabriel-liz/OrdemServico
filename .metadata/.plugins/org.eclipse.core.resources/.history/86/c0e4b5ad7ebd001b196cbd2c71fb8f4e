@@ -1,0 +1,15 @@
+package com.ordemServico.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.repository.OrdemServicoRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class InicializacaoOrdemServicoService {
+
+	private OrdemServicoRepository ordemSevicoRepository;
+	private BuscaOrdemServicoService buscaOrdemServicoService;
+}

@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Service
 public class FinalizacaoOrdemServicoService {
+
 	
 	private OrdemServicoRepository ordemSevicoRepository;
 	private BuscaOrdemServicoService buscaOrdemServicoService;

@@ -55,8 +55,6 @@ public class OrdemServicoController {
 		finalizacaoEntFinalizacaoOrdemServicoService.finalizar(ordemServicoId);
 	}
 	
-	@PutMapping("/{ordemServicoId}/inicializacao")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void iniciar(@PathVariable Long ordemServicoId) {
 		inicializacaoOrdemServicoService.iniciar(ordemServicoId);
 	}

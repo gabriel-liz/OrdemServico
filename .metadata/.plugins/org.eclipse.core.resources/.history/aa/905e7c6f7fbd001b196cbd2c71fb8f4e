@@ -88,8 +88,7 @@ public class OrdemServico {
 		if(naoPodeSerIniciada()) {
 			throw new NegocioException("Ordem de Serviço não pode ser iniciada");
 		}
-		setStatus(StatusOrdem.EM_ANDAMENTO);
-		setData_fim(OffsetDateTime.now());			
+		
 	}
 	
 	public boolean podeSerIniciada() {

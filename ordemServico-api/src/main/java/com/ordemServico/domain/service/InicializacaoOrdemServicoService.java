@@ -11,16 +11,16 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
-public class FinalizacaoOrdemServicoService {
-	
+public class InicializacaoOrdemServicoService {
+
 	private OrdemServicoRepository ordemSevicoRepository;
 	private BuscaOrdemServicoService buscaOrdemServicoService;
 	
 	@Transactional
-	public void finalizar(Long ordemservico_id) {
-		OrdemServico ordemServico = buscaOrdemServicoService.buscar(ordemservico_id);		
+	public void iniciar(Long ordemservico_id) {
+		OrdemServico ordemServico = buscaOrdemServicoService.buscar(ordemservico_id);	
 		
-		ordemServico.finalizar();
+		ordemServico.iniciar();
 		
 		ordemSevicoRepository.save(ordemServico);
 	}
