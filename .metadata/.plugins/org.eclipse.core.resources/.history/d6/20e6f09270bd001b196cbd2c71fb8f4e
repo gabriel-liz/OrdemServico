@@ -1,0 +1,70 @@
+package com.ordemServico.domain.model;
+
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+public class OrdemServico {
+	
+	@EqualsAndHashCode.Include
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;	
+	
+	
+	@ManyToOne
+	private Cliente cliente;
+	
+	
+	@ManyToOne
+	private Responsavel responsavel;
+	
+
+	@Embedded
+	private Equipamento equipamento;
+	
+	@OneToMany(mappedBy = "ordemServico", cascade = CascadeType.ALL)
+	private List<Ocorrencia> ocorrencias = new ArrayList<>();
+	
+	
+	@Enumerated(EnumType.STRING)
+	private StatusOrdem status;
+	
+	private String descricao_solucao;
+		
+	private OffsetDateTime data_inicio;	
+	
+	private OffsetDateTime data_fim;
+
+	public Ocorrencia adicionarOcorrencia(String descricao) {
+		Ocorrencia ocorrencia = new Ocorrencia();
+		ocorrencia.setDescricao(descricao);
+		ocorrencia.setDataRegistro(OffsetDateTime.now());
+		ocorrencia.setOrdemServico(this);
+		
+		this.getOcorrencias().add(ocorrencia);
+		
+		return ocorrencia;
+		
+	}
+
+}

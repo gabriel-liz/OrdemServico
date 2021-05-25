@@ -1,0 +1,10 @@
+package com.ordemServico.api.model;
+
+import java.time.OffsetDateTime;
+
+public class OcorrenciaModel {
+	
+	private Long id;
+	private String descricao;
+	private OffsetDateTime dataRegistro;
+}

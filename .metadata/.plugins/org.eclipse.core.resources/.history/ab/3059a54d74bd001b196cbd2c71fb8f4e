@@ -1,0 +1,19 @@
+package com.ordemServico.api.model;
+
+import java.time.OffsetDateTime;
+
+import com.ordemServico.domain.model.OrdemServico;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+public class OcorrenciaModel {
+	
+	private Long id;
+	//private OrdemServico ordemServico;
+	private String descricao;
+	private OffsetDateTime dataRegistro;
+}

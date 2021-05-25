@@ -1,0 +1,14 @@
+package com.ordemServico.domain.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.model.OrdemServico;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+
+}

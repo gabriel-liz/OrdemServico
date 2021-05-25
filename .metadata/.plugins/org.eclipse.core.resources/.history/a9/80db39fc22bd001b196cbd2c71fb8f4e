@@ -1,0 +1,14 @@
+package com.ordemServico.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class FinalizacaoOrdemServicoService {
+
+	public void finalizar(Long ordemServico_id) {
+		
+	}
+}

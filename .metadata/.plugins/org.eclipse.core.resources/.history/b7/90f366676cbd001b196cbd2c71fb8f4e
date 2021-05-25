@@ -1,0 +1,19 @@
+package com.ordemServico.domain.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class FinalizacaoOrdemServicoService {
+
+	private BuscaOrdemServicoService buscaOrdemServicoService;
+	
+	@Transactional
+	public void finalizar(Long ordemservico_id) {
+		
+	}
+}

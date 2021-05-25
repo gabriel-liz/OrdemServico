@@ -1,0 +1,20 @@
+package com.ordemServico.api.model.input;
+
+import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+
+public class Equipamentoinput {
+
+	
+	@NotBlank
+	@Column(name = "equipamento_tipo")
+	private String tipo;
+	
+	@NotBlank
+	@Column(name = "equipamento_marca")
+	private String marca;
+	
+	@NotBlank
+	@Column(name = "equipamento_descricao")
+	private String descricao;
+}

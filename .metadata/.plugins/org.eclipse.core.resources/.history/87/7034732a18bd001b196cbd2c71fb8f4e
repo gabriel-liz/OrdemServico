@@ -1,0 +1,10 @@
+package com.ordemServico.api.model.input;
+
+import javax.validation.constraints.NotNull;
+
+public class ResponsavelInput {
+	
+	@NotNull
+	private Long id;
+
+}

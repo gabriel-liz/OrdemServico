@@ -1,0 +1,28 @@
+package com.ordemServico.domain.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.ordemServico.domain.exception.NegocioException;
+import com.ordemServico.domain.model.Ocorrencia;
+import com.ordemServico.domain.model.OrdemServico;
+import com.ordemServico.domain.repository.OrdemServicoRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Service
+public class RegistroOcorrenciaService {
+	
+	private BuscaOrdemServicoService buscaOrdemServicoService;
+	
+	@Transactional
+	public Ocorrencia registrar(Long ordemservico_id, String descricao) {
+		OrdemServico ordemServico = ordemServicoRepository.findById(ordemservico_id)
+				.orElseThrow(() -> new NegocioException("Ordem de Serviço não encontrada"));
+		
+		return ordemServico.adicionarOcorrencia(descricao);
+	}
+
+}

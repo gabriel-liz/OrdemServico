@@ -1,0 +1,19 @@
+package com.ordemServico.domain.model;
+
+import java.time.OffsetDateTime;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+public class Ocorrencia {
+
+	@EqualsAndHashCode.Include
+	private Long id;
+	private OrdemServico ordemServico;
+	private String descricao;
+	private OffsetDateTime dataRegistro;
+}

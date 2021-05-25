@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import com.ordemServico.api.model.OrdemServicoModel;
+import com.ordemServico.api.model.input.OrdemServicoInput;
 import com.ordemServico.domain.model.OrdemServico;
 
 import lombok.AllArgsConstructor;
@@ -26,6 +27,10 @@ public class OrdemServicoAssembler {
 		return ordemServico.stream()
 				.map(this::toModel)
 				.collect(Collectors.toList());
+	}
+	
+	public OrdemServico toEntity(OrdemServicoInput ordemServicoInput) {
+		return modelMapper.map(ordemServicoInput, OrdemServico.class);
 	}
 
 }

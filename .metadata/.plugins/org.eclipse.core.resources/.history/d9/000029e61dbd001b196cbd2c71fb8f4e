@@ -1,0 +1,5 @@
+package com.ordemServico.api.model;
+
+public class OcorrenciaModel {
+
+}

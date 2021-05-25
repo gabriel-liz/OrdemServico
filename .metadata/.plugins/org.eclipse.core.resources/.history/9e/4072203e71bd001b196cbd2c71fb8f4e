@@ -1,0 +1,12 @@
+create table ocorrencia (
+
+	id bigint not null auto_increment,
+    ordemservico_id bigint not null,
+    descricao text not null,
+    data_registro datetime not null,
+    
+    
+    CONSTRAINT fk_ocorrencia_ordemservico FOREIGN KEY (ordemservico_id) REFERENCES ordem_servico (Id),
+    primary key(id)
+);
+
