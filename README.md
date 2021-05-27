@@ -11,7 +11,9 @@ senha: root <br />
 
 ## Backend:
 
-Java Spring 
+Java <br /> 
+Spring Framework
+
 
 ## Para rodar a aplicação:
 
